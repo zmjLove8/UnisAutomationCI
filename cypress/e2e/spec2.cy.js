@@ -1,6 +1,6 @@
 describe('Login Test', () => {
     it('should login successfully', () => {
-        cy.visit('https://example.com/login') // 替换为你的登录页面URL
+        cy.visit('https://example.com/login',{ timeout: 120000 }) // 时间单位是毫秒) // 替换为你的登录页面URL
 
         cy.get('input[name="username"]').type('your_username') // 替换为你的用户名
         cy.get('input[name="password"]').type('your_password') // 替换为你的密码
@@ -11,3 +11,4 @@ describe('Login Test', () => {
         cy.contains('Welcome, your_username') // 替换为登录成功后的欢迎消息
     })
 })
+
