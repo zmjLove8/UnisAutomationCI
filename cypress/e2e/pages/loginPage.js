@@ -16,11 +16,13 @@ class LoginPage {
     }
   
     login() {
-        const username = Cypress.env('username');
+        this.visit();
+        const username = Cypress.env('username'); 
         const password = Cypress.env('password');
         this.getEmailField().type(username);
         this.getPasswordField().type(password);
-        this.getSubmitButton().click();
+        this.getLoginButton().click();
+        cy.url().should('eq', 'https://stage.logisticsteam.com/client-portal/#/control-panel/view');
       }
   }
   
